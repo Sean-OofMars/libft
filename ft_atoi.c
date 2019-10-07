@@ -6,7 +6,7 @@
 /*   By: sferreir <sferreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 13:30:37 by sferreir          #+#    #+#             */
-/*   Updated: 2019/10/07 10:47:20 by sferreir         ###   ########.fr       */
+/*   Updated: 2019/10/07 13:37:01 by sferreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ int		ft_atoi(const char *str)
 		s = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	if (str[i] == '+' || str[i] == '-')
+		++str;
+	while (str[i] >= '0' && str[i] <= '9' && str[i])
 	{
 		r = r * 10 + (str[i] - '0');
 		i++;
